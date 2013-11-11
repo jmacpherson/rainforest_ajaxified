@@ -24,6 +24,16 @@
   <body>
     <%= render 'layouts/top_nav' %>
       <div class="row">
+        <div class="notice">
+          <% if flash[:notice] %>
+            <%= flash[:notice] %>
+          <% end %>
+        </div>
+        <div class="alert">
+          <% if flash[:alert] %>
+          <%= flash[:alert] %>
+        <% end %>
+        </div>
         <div class="main-page">
           <%= yield %>
         </div>

@@ -6,10 +6,19 @@
    </ul>
 
    <section class="top-bar-section">
-      <ul class="right">
-       <li><a href="<%= new_product_path %>">Add new product</a></li>
-       <li><a href="#">menu2</a></li>
-       <li><a href="#">menu3</a></li>
+    <ul class="right">
+      <li class="divider"></li>
+      <li><a href="<%= new_product_path %>">Add new product</a></li>
+      <li class="divider"></li>
+      <% if current_user %>
+        <li><a href="#">Signed in as <%= current_user.email %></a></li>
+        <li class="divider"></li>
+        <li><a href="<%= sign_out_path %> ">Sign out</a></li>
+      <% else %>
+        <li><a href="<%= new_session_path %> ">Sign in</a></li>
+        <li class="divider"></li>
+        <li><a href="<%= new_user_path %> ">Sign up</a></li>
+      <% end %>
      </ul>
    </section>
       
