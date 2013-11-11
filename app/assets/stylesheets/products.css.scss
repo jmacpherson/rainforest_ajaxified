@@ -61,6 +61,21 @@
   @extend .large-centered;
 }
 
+.review-display {
+  margin-top: 60px;
+}
+
+.review-wrapper {
+  @extend .large-6;
+  @extend .large-centered;
+  @extend .columns;
+  background-color: gray;
+  color: white;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
 
 // Form styling
 

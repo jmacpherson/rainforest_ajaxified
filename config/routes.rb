@@ -5,7 +5,9 @@ Rainforest02::Application.routes.draw do
   get "sign_out" => "sessions#destroy"
 
   root "products#index"
-  resources :products
+  resources :products do
+     resources :reviews, :except => [:index]
+  end
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users, :only => [:new, :create]
 

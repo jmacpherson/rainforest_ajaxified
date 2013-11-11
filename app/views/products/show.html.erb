@@ -12,5 +12,43 @@
     <div class="description-wrapper">
         <%= @product.description %>
     </div>
+  
+    <div class="review-display">
+      <h3 class="centered">Reviews</h3>
+
+      <% @product.reviews.each do |review| %>
+        <% if review.user != nil %>
+          <div class="review-wrapper">
+            <p><%= review.content %></p>
+            <%= review.rating %>
+            <p>Posted by: <em><%= review.user.email %></em></p>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+
+    <% if current_user %>
+      <div class="form-wrapper">
+        <%= form_for ([@product, @review]) do |f| %>
+          <% if @review.errors.any? %>
+            <div class="error_messages">
+              <h2>Form is invalid</h2>
+              <ul>
+                <% for message in @review.errors.full_messages %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= f.label :content %>
+          <%= f.text_area :content %>
+          <%= f.submit "Post", :class => "button centered"%></p>
+        <% end %>
+      </div> 
+    <% else %>
+      <div class="review-wrapper">
+        <p class="centered">Please <%= link_to "Sign in", sign_in_path %> to post a review.</p>
+      </div>
+    <% end %>
   </div>
 </div>
