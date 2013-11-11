@@ -1,0 +1,17 @@
+<h1 class="centered">Most popular products</h1>
+<div class="all-products">
+  <div class="row">
+    <ul class="large-block-grid-4">
+    <% @products.each do |product| %>
+      <li>
+        <div class="product-wrapper">
+          <p class="centered"><%= product.name %></p>
+          <div class="image-wrapper">
+            <a href="<%= product_path(product) %> "><img src="<%= product.url %> " alt="<%= product.name %> "></a>
+          </div>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+@import "foundation_and_overrides";
+
+// top-nav custom styles
+
+li.name > a {
+  color: white;
+  font-size: 20px;
+}
+
+section > ul > li {
+  color: white;
+}
+
+// main page styles
+
+.main-page {
+  @extend .columns;
+  @extend .large-12;
+  @extend .large-centered;
+  height: 100%;
+}

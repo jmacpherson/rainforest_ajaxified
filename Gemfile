@@ -33,7 +33,18 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
+
+#Zurb foundation
+gem 'zurb-foundation'
+
+#Foundation icon set
+gem 'foundation-icons-sass-rails'
+
+#IRB Tools for better formatted rails console
+gem 'irbtools', require: false
+
+gem 'normalize-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

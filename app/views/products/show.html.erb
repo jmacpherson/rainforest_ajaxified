@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h2 class="centered"><%= @product.name %></h2>
+    <h4 class="centered">$<%= @product.format_price %></h4>
+    <div class="control-wrapper">
+      <%= link_to "Edit", edit_product_path(@product), :class => "button" %>
+      <%= link_to "Delete", @product, method: :delete, data:{ confirm: "Are you sure?" }, :class => "button centered" %>
+    </div>
+    <div class="image-show">
+      <img src="<%= @product.url %>" alt="<%= @product.name %>">
+    </div>
+    <div class="description-wrapper">
+        <%= @product.description %>
+    </div>
+  </div>
+</div>
