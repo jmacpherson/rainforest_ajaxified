@@ -5,10 +5,13 @@
     <% @products.each do |product| %>
       <li>
         <div class="product-wrapper">
-          <p class="centered"><%= product.name %></p>
+          <div class="product-head">
+            <p class="centered"><%= product.name %></p> 
+          </div>
           <div class="image-wrapper">
             <a href="<%= product_path(product) %> "><img src="<%= product.url %> " alt="<%= product.name %> "></a>
           </div>
+          <p class="centered">$<%= product.format_price %></p>
         </div>
       </li>
     <% end %>
