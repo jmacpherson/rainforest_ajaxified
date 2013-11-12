@@ -9,7 +9,11 @@
    <section class="top-bar-section">
     <ul class="right">
       <li class="divider"></li>
-      <li><a href="<%= new_product_path %>">Add new product</a></li>
+
+      <% if can? :create, @product %>
+        <li><a href="<%= new_product_path %>">Add new product</a></li>
+      <% end %>
+      
       <li class="divider"></li>
       <% if current_user %>
         <li><a href="#">Signed in as <%= current_user.email %></a></li>

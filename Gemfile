@@ -40,6 +40,9 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+# Use this for Authorization
+gem 'cancan'
+
 #Zurb foundation
 gem 'zurb-foundation'
 
@@ -49,8 +52,10 @@ gem 'foundation-icons-sass-rails'
 #IRB Tools for better formatted rails console
 gem 'irbtools', require: false
 
+# Add normalize.css
 gem 'normalize-rails'
 
+# Needed for Heroku deployement
 gem 'rails_12factor'
 
 # Use unicorn as the app server

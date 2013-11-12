@@ -3,8 +3,10 @@
     <h2 class="centered"><%= @product.name %></h2>
     <h4 class="centered">$<%= @product.format_price %></h4>
     <div class="control-wrapper">
-      <%= link_to "Edit", edit_product_path(@product), :class => "button" %>
-      <%= link_to "Delete", @product, method: :delete, :class => "button centered" %>
+      <% if can? :manage, @product %>
+        <%= link_to "Edit", edit_product_path(@product), :class => "button" %>
+        <%= link_to "Delete", @product, method: :delete, :class => "button centered" %>
+      <% end %>
     </div>
     <div class="image-show">
       <img src="<%= @product.url %>" alt="<%= @product.name %>">

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  ROLES = %w[admin user]
   has_many :reviews
   has_many :products, :through => :reviews
   has_secure_password

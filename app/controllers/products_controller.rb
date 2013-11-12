@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def index
     @products = Product.all
   end
@@ -29,10 +30,14 @@ class ProductsController < ApplicationController
   
   def update
     @product = Product.find(params[:id])
-    if @product.update_attributes(product_params)
-      redirect_to product_path(@product)
+    if cannot? :update, @product
+      redirect_to product_path(@product), :alert => "You do not have permission to do that."
     else
-      render "edit"
+      if @product.update_attributes(product_params)
+        redirect_to product_path(@product)
+      else
+        render "edit"
+      end
     end
   end
   

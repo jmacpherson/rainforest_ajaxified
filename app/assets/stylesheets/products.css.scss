@@ -7,6 +7,18 @@
   text-align: center;
 }
 
+.rounded {
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+
+
+// logo display
+#logo-wrapper {
+  background-color:white;
+  border: none;
+}
+
 // product display
 
 .all-products {
@@ -39,8 +51,8 @@
 }
 
 .product-head {
-  height: 50px;
-  font-size: 15px;
+  height: 40px;
+  font-size: 12px;
   font-style: bold;
 }
 

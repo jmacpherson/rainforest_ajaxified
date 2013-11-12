@@ -1,20 +1,108 @@
-<h1 class="centered">Most popular products</h1>
-<div class="all-products">
-  <div class="row">
-    <ul class="large-block-grid-4">
-    <% @products.each do |product| %>
-      <li>
-        <div class="product-wrapper">
-          <div class="product-head">
-            <p class="centered"><%= product.name %></p> 
+<div class="row">
+    <div class="large-12 columns">
+      <div class="row">
+
+  <!-- Side Bar -->
+
+        <div class="large-4 small-12 columns">
+
+          <div class="logo-wrapper">
+            <img src="http://www.serfaus-fiss-ladis.at/website/var/tmp/thumb_414820__boxbig.png">
           </div>
-          <div class="image-wrapper">
-            <a href="<%= product_path(product) %> "><img src="<%= product.url %> " alt="<%= product.name %> "></a>
+          
+          <div class="hide-for-small panel rounded" id="logo-wrapper">
+            <h3 class="centered">Rainforest</h3>
+            <h5 class="subheader">Direct from the exotic netheregions of the amazon, we bring you the very best products in food preparation.
+            </h5>
           </div>
-          <p class="centered">$<%= product.format_price %></p>
+
+          <a href="#">
+          <div class="panel callout radius">
+            <h6>99&nbsp; items in your cart</h6>
+          </div>
+          </a>
+
         </div>
-      </li>
-    <% end %>
-    </ul>
+
+    <!-- End Side Bar -->
+
+
+    <!-- Thumbnails -->
+
+        <div class="large-8 columns">
+          <div class="row">
+
+          <% @products.each do |product| %>
+          
+            <div class="large-4 small-6 columns">
+              <div class="image-wrapper">
+                <a href="<%= product_path(product) %> "><img src="<%= product.url %> " alt="<%= product.name %> "></a>
+              </div>
+              <div class="panel rounded">
+                <div class="product-head">
+                  <p class="centered"><%= product.name %></p> 
+                </div>
+                <h6 class="subheader centered">$<%= product.format_price %></h6>
+              </div>
+            </div>
+            <% end %>
+
+          </div>
+
+    <!-- End Thumbnails -->
+
+
+    <!-- Managed By -->
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="panel">
+                <div class="row">
+
+                  <div class="large-2 small-6 columns">
+                    <img src="http://placehold.it/300x300&text=Site Owner">
+                  </div>
+
+                  <div class="large-10 small-6 columns">
+                    <strong>This Site Is Managed By<hr/></strong>
+
+                    Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+    <!-- End Managed By -->
+
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Footer -->
+
+      <footer class="row">
+        <div class="large-12 columns"><hr />
+          <div class="row">
+
+            <div class="large-6 columns">
+              <p>&copy; Copyright no one at all. Go to town.</p>
+            </div>
+
+            <div class="large-6 columns">
+              <ul class="inline-list right">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+
+    <!-- End Footer -->
+
+    </div>
   </div>
-</div>

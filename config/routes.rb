@@ -1,4 +1,7 @@
 Rainforest02::Application.routes.draw do
+  get "profiles/index"
+  get "profiles/show"
+  get "profiles/edit"
   get "reviews/new"
   get "reviews/edit"
   get "sign_in" => "sessions#new"

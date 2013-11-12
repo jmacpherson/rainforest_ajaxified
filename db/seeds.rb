@@ -26,3 +26,10 @@ Product.create!(
   description: "Pineapple slicer will peel, core, and slice a fresh pineapple in 30 seconds. Removes perfectly formed rings while leaving the core in the shell.",
   price_in_cents: 440
   )
+
+User.create!(
+  email: "heru@project89.org",
+  password: "test888",
+  password_confirmation: "test888",
+  role: "admin"
+  )
