@@ -7,6 +7,7 @@ class Ability
         can :manage, :all
     elsif current_user.role == "user"
         can [:create, :destroy, :update], [Review]
+        can :manage, Profile
     else
         can :read, :all
     end
