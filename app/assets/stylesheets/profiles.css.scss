@@ -31,3 +31,14 @@ li {
   float: right;
   top: 0;
 }
+
+.user-reviews {
+  @extend .large-12;
+  @extend .columns;
+}
+
+.user-reviews.wrapper {
+  @extend .large-8;
+  @extend .columns;
+  @extend .large-centered;
+}
