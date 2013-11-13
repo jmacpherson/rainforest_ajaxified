@@ -22,3 +22,12 @@
   @extend .large-9;
   @extend .columns;
 }
+
+li {
+  list-style: none;
+}
+
+.button {
+  float: right;
+  top: 0;
+}

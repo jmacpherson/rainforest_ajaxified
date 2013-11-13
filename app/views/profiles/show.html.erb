@@ -20,6 +20,8 @@
   <% end %>
   <p><%= @user.email %></p>
   <hr>
+  <p><b>Favorite Fruit:</b> <%= @profile.favorite_fruit %></p>
+  <hr>
   <div>
     <h5 class="title">Bio:</h5>
     <div class="content">
@@ -28,7 +30,6 @@
           <%= @profile.biography %>
         </div>
       </div>
-      <hr>
     </div>
   </div>
 </div>
