@@ -24,6 +24,7 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @profile = @user.profile
+    @reviews = @user.reviews
   end
 
   def edit
@@ -44,7 +45,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :favorite_fruit, :biography, :user_id)  
+    params.require(:profile).permit(:first_name, :last_name, :favorite_fruit, :biography, :user_id, :url)  
   end
-
 end

@@ -1,4 +1,4 @@
-<div class="profile-container">
+<!-- <div class="profile-container">
   <div class="profile-wrapper">
     <ul>
     <li><h4><b>Name:</b> <%= @profile.first_name %> <%= @profile.last_name %></h3></li>
@@ -11,4 +11,48 @@
       <%= link_to "Edit", edit_user_profile_path(@user), :class => "button" %>
     <% end %>
   </div>
+</div> -->
+
+<div class="profile-container">
+  <h3><%= @profile.first_name %> <%= @profile.last_name %></h3>
+  <% if @user == current_user %>
+    <%= link_to "Edit", edit_user_profile_path(@user), :class => "button" %>
+  <% end %>
+  <p><%= @user.email %></p>
+  <hr>
+  <div>
+    <h5 class="title">Bio:</h5>
+    <div class="content">
+      <div class="row">
+        <div class="large-12 columns">
+          <%= @profile.biography %>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+ 
+    <!-- Sidebar -->
+ 
+<div class="large-3 columns">
+  <h5>Me</h5>
+  <div>
+    <img src="<%= @profile.url %>">
+  </div>
+</div>
+<!-- End Sidebar -->
+</div>
+
+<div class="large-9 columns">
+  <hr>
+  <h3>Reviews by <%= @profile.first_name %></h3>
+  <hr>
+  <% @reviews.each do |review| %>
+    <% product = Product.find(review.product_id) %>
+    <h5>Product: <%= product.name %></h6>
+    <h6>Reviewed: <%= review.created_at %></h6>
+    <p><%= review.content %></p>
+    <hr>
+  <% end %>
 </div>
