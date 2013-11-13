@@ -16,3 +16,26 @@
   @extend .large-12;
   @extend .columns;
 }
+
+.profile-container {
+  margin-top: 30px;
+  @extend .large-centered;
+  @extend .large-12;
+  @extend .columns;
+}
+
+.profile-wrapper {
+  margin-top: 30px;
+  list-style: none;
+  @extend .large-centered;
+  @extend .large-6;
+  @extend .columns;
+}
+
+.profile-wrapper > ul {
+  list-style: none;
+}
+
+.profiles-header > h3, .profiles-header > a {
+  margin-bottom: 40px;
+}

@@ -16,7 +16,13 @@
       
       <li class="divider"></li>
       <% if current_user %>
-        <li><a href="<%= profile_path %> ">Signed in as <%= current_user.email %></a></li>
+        <li><a href="<%= profiles_path %> ">Profiles</a></li>
+        <li class="divider"></li>
+        <% if current_user.profile.nil? %>
+          <li><a href="<%= new_user_profile_path(current_user) %>">Signed in as <%= current_user.email %></a></li>
+        <% else %>
+          <li><a href="<%= show_user_profile_path(current_user) %> ">Signed in as <%= current_user.email %></a></li>
+        <% end %>
         <li class="divider"></li>
         <li><a href="<%= sign_out_path %> ">Sign out</a></li>
       <% else %>

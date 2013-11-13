@@ -1,2 +1,14 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="profile-container">
+  <div class="profile-wrapper">
+    <ul>
+    <li><h4><b>Name:</b> <%= @profile.first_name %> <%= @profile.last_name %></h3></li>
+    <hr>
+    <li><p><b>Email:</b> <%= @user.email %></p></li>
+    <li><p><b>Favourite Fruit:</b> <%= @profile.favorite_fruit %></p></li>
+    <li><p><b>Biography:</b> <%= @profile.biography %></p></li>
+    </ul>
+    <% if @user == current_user %>
+      <%= link_to "Edit", edit_user_profile_path(@user), :class => "button" %>
+    <% end %>
+  </div>
+</div>

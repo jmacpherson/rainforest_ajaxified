@@ -1,10 +1,8 @@
 Rainforest02::Application.routes.draw do
   get "sign_in" => "sessions#new"
   get "sign_out" => "sessions#destroy"
-  get "profile" => "profiles#show"
-  # get "profiles" => "profiles#index"
-  # get "new_profile" => "profiles#new"
-
+  get "users/:user_id/profile" => "profiles#show", as: 'show_user_profile'
+  get "profiles" => "profiles#index", as: 'profiles'
 
   root "products#index"
   resources :products do

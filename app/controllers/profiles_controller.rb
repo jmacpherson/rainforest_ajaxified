@@ -2,6 +2,8 @@ class ProfilesController < ApplicationController
   # load_and_authorize_resource
 
   def index
+    @users = User.all
+    @profiles = Profile.all
   end
 
   def new
@@ -20,10 +22,23 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
   end
 
   def edit
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+
+    if @user.profile.update_attributes(profile_params)
+      redirect_to show_user_profile_path(@user)
+    else
+      render edit_user_profile_path(@user)
+    end
   end
 
   private
