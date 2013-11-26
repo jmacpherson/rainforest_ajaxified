@@ -1,3 +1,4 @@
+
 Rainforest02::Application.routes.draw do
   get "sign_in" => "sessions#new"
   get "sign_out" => "sessions#destroy"

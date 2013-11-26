@@ -58,6 +58,11 @@ gem 'normalize-rails'
 # Needed for Heroku deployement
 gem 'rails_12factor'
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
