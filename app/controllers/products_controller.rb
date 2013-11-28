@@ -2,9 +2,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.order('products.created_at DESC').page(params[:page])
-    p @products
 
     respond_to do |format|
+      format.json { render json: @products }
       format.js
       format.html
     end
@@ -14,6 +14,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if current_user
       @review = @product.reviews.build
+    end
+
+    respond_to do |format|
+      format.json { render json: @product }
+      format.html
     end
   end
   
