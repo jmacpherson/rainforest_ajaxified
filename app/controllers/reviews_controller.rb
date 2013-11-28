@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
   def create
     @review = @product.reviews.build(review_params)
     @review.user_id = current_user.id
+    # sleep(2)
     respond_to do |format|
       if @review.save
         format.html { redirect_to product_path(@product.id), notice: "Review added." }

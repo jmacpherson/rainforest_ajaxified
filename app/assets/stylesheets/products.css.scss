@@ -1,6 +1,6 @@
-// Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 @import "foundation_and_overrides";
 
 .centered {
@@ -58,6 +58,12 @@
 
 // Show view styling
 
+.control-wrapper {
+  @extend .large-3;
+  @extend .columns;
+  @extend .large-centered;
+}
+
 .image-show {
   @extend .large-centered;
   @extend .large-3;
@@ -66,6 +72,7 @@
   border: 1px solid gray;
   border-radius: 5px;
   padding: 10px;
+  clear: both;
 }
 
 .description-wrapper {
@@ -74,13 +81,7 @@
   @extend .columns;
 }
 
-.control-wrapper {
-  @extend .large-3;
-  @extend .columns;
-  @extend .large-centered;
-}
-
-.review-display {
+#review-display {
   margin-top: 60px;
 }
 

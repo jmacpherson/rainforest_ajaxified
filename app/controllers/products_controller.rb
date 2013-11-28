@@ -1,7 +1,13 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.order('products.created_at DESC').page(params[:page])
+    p @products
+
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
   
   def show

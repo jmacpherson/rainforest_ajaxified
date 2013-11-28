@@ -30,24 +30,9 @@
     <!-- Thumbnails -->
 
         <div class="large-8 columns">
-          <div class="row">
-
-          <% @products.each do |product| %>
-          
-            <div class="large-4 small-6 columns">
-              <div class="image-wrapper">
-                <a href="<%= product_path(product) %> "><img src="<%= product.url %> " alt="<%= product.name %> "></a>
-              </div>
-              <div class="panel rounded">
-                <div class="product-head">
-                  <p class="centered"><%= product.name %></p> 
-                </div>
-                <hr>
-                <h6 class="subheader centered">$<%= product.format_price %></h6>
-              </div>
-            </div>
-            <% end %>
-
+          <div id="products" class="row">
+                      
+              <%= render @products %>
           </div>
 
     <!-- End Thumbnails -->
@@ -91,12 +76,7 @@
             </div>
 
             <div class="large-6 columns">
-              <ul class="inline-list right">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-                <li><a href="#">Link 4</a></li>
-              </ul>
+              <%= paginate @products %>
             </div>
 
           </div>

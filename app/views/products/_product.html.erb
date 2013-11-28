@@ -1,0 +1,12 @@
+  <div class="large-4 small-6 columns">
+    <div class="image-wrapper">
+      <a href="<%= product_path(product) %> "><img src="<%= product.url %> " alt="<%= product.name %> "></a>
+    </div>
+    <div class="panel rounded">
+      <div class="product-head">
+        <p class="centered"><%= product.name %></p> 
+      </div>
+      <hr>
+      <h6 class="subheader centered">$<%= product.format_price %></h6>
+    </div>
+  </div>

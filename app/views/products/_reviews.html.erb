@@ -1,0 +1,9 @@
+<% @product.reviews.each do |review| %>
+  <% if review.user != nil %>
+    <div class="review-wrapper">
+      <p><%= review.content %></p>
+      <%= review.rating %>
+      <p>Posted by: <em><%= review.user.email %></em></p>
+    </div>
+  <% end %>
+<% end %>

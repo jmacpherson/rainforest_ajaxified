@@ -63,6 +63,15 @@ group :test, :development do
   gem 'factory_girl_rails'
 end
 
+# Use Kaminari for pagination
+gem 'kaminari'
+
+# Use Faker to generate seeds
+gem 'faker'
+
+# Use image_sucker to generate random images for seeds
+gem 'image_suckr'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
